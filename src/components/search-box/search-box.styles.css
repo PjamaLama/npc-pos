@@ -1,0 +1,17 @@
+.search {
+	border: none;
+	outline: none;
+	padding: 10px;
+	width: 150px;
+	line-height: 30px;
+	margin-bottom: 30px;
+	display: flex;
+	margin-top: 90px;
+	margin-right: 50%;
+	margin-left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	color: white;
+}
