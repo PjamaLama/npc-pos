@@ -1,17 +1,13 @@
-import React from 'react';
-import ProductButton from '../product-button/product-btn.component';
-import './product-grid.styles.scss';
+import React from "react";
+import ProductButton from "../product-button/product-btn.component";
+import "./product-grid.styles.scss";
 
+const ProductGrid = ({ products }) => (
+	<div className="product-buttons-grid">
+		{products.map(product => (
+			<ProductButton key={product.id} product={product} />
+		))}
+	</div>
+);
 
-export const ProductGrid = props =>(
-    <div className='product-buttons-grid'>
-    {props.products.map(product => (
-        <ProductButton key={product.id} name={product.name} price={product.price} />
-    ))}
-    </div>
-
-)
-
-export default ProductGrid
-
-
+export default ProductGrid;
