@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -15,6 +17,8 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems } from "./listItems";
 import SecondaryListItems from "./listItems";
+import CartIcon from "../cart-icon/cart-icon.component";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 const drawerWidth = 240;
 
@@ -96,7 +100,7 @@ const useStyles = makeStyles(theme => ({
 	}
 }));
 
-export default function Layout() {
+function Layout({ hidden }) {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(true);
 	const handleDrawerOpen = () => {
@@ -140,7 +144,9 @@ export default function Layout() {
 							<NotificationsIcon />
 						</Badge>
 					</IconButton>
+					<CartIcon />
 				</Toolbar>
+				{hidden ? null : <CartDropdown />}
 			</AppBar>
 			<Drawer
 				variant="permanent"
@@ -164,3 +170,9 @@ export default function Layout() {
 		</div>
 	);
 }
+
+const mapStateToProps = ({ cart: { hidden } }) => ({
+	hidden
+});
+
+export default connect(mapStateToProps)(Layout);
