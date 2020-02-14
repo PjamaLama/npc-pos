@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/firebase.util";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -9,6 +10,7 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 export const mainListItems = (
 	<div>
@@ -63,8 +65,8 @@ const SecondaryListItems = ({ currentUser }) => (
 	</div>
 );
 //state is from root.reducer --> user.reducer
-const mapStateToProps = state => ({
-	currentUser: state.user.currentUser
+const mapStateToProps = createStructuredSelector({
+	currentUser: selectCurrentUser
 });
 
 export default connect(mapStateToProps)(SecondaryListItems);

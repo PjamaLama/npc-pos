@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,6 +20,8 @@ import { mainListItems } from "./listItems";
 import SecondaryListItems from "./listItems";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+
+import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
 const drawerWidth = 240;
 
@@ -171,8 +174,8 @@ function Layout({ hidden }) {
 	);
 }
 
-const mapStateToProps = ({ cart: { hidden } }) => ({
-	hidden
+const mapStateToProps = createStructuredSelector({
+	hidden: selectCartHidden
 });
 
 export default connect(mapStateToProps)(Layout);
