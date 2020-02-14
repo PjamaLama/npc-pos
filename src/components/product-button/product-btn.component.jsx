@@ -5,11 +5,11 @@ import "./product-btn.styles.scss";
 
 import { Button } from "@material-ui/core";
 
-const ProductButton = ({ product, addItem }) => {
-	const { name } = product;
+const ProductButton = ({ item, addItem }) => {
+	const { name } = item;
 	return (
 		<Button
-			onClick={() => addItem(product)}
+			onClick={() => addItem(item)}
 			variant="contained"
 			size="large"
 			color="primary"
@@ -21,7 +21,7 @@ const ProductButton = ({ product, addItem }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-	addItem: product => dispatch(addItem(product))
+	addItem: item => dispatch(addItem(item))
 });
 
 export default connect(null, mapDispatchToProps)(ProductButton);

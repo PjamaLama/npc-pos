@@ -5,7 +5,7 @@ import "./product-grid.styles.scss";
 const ProductGrid = ({ products }) => (
 	<div className="product-buttons-grid">
 		{products.map(product => (
-			<ProductButton key={product.id} product={product} />
+			<ProductButton key={product.id} item={product} />
 		))}
 	</div>
 );
