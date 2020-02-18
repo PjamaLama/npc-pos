@@ -15,6 +15,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import Customers from "./pages/customers/customers.component";
 import CheckoutPage from "./pages/checkout/checkout.component";
+import Login from "./pages/login/login.component";
 
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
@@ -66,6 +67,7 @@ export class App extends Component {
 					<Route exact path="/customers" component={Customers} />
 					<Route exact path="/dashboard" component={Dashboard} />
 					<Route exact path="/checkout" component={CheckoutPage} />
+					<Route exact path="/login" component={Login} />
 				</Switch>
 				<Layout />
 			</div>

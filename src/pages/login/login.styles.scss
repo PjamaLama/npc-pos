@@ -1,0 +1,35 @@
+body {
+	background-color: #f5f5f5;
+}
+
+.login {
+	width: auto;
+	height: auto;
+	margin: 30px auto;
+
+	img {
+		width: 50%;
+		height: 50%;
+	}
+
+	#landScape {
+		position: absolute;
+		bottom: 15%;
+		right: 25%;
+	}
+	#loginCard {
+		position: absolute;
+		bottom: 24%;
+		right: 25%;
+	}
+	#user {
+		position: absolute;
+		right: 13%;
+		top: 0%;
+
+		&:hover {
+			transition: 1s all;
+			transform: translateY(200px);
+		}
+	}
+}

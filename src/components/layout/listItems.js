@@ -9,6 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
+import AddCircleIcon from "@material-ui/icons/AddCircle";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
@@ -36,6 +37,14 @@ export const mainListItems = (
 					<BarChartIcon />
 				</ListItemIcon>
 				Reports
+			</ListItem>
+		</Link>
+		<Link to="/dashboard">
+			<ListItem button>
+				<ListItemIcon>
+					<AddCircleIcon />
+				</ListItemIcon>
+				Add Stock
 			</ListItem>
 		</Link>
 	</div>
