@@ -1,12 +1,11 @@
 import React from "react";
+import "./product-btn.styles.scss";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
-import "./product-btn.styles.scss";
 
 import { Button } from "@material-ui/core";
 
 const ProductButton = ({ item, addItem }) => {
-	const { name } = item;
 	return (
 		<Button
 			onClick={() => addItem(item)}
@@ -15,7 +14,7 @@ const ProductButton = ({ item, addItem }) => {
 			color="primary"
 			className="product-button"
 		>
-			{name.toUpperCase()}
+			{item.name}
 		</Button>
 	);
 };

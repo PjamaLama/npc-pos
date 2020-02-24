@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import {
-	auth,
-	createUserProfileDocument
-} from "./components/firebase/firebase.util";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 import "./App.css";
+import { auth, createUserProfileDocument } from "./firebase/firebase.util";
 
 import Layout from "./components/layout/layout.component";
 import Pos from "./pages/pos/pos.component";

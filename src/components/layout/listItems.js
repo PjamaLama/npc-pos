@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../firebase/firebase.util";
+import { auth } from "../../firebase/firebase.util";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 

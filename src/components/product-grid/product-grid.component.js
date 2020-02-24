@@ -1,6 +1,7 @@
 import React from "react";
-import ProductButton from "../product-button/product-btn.component";
 import "./product-grid.styles.scss";
+
+import ProductButton from "../product-button/product-btn.component";
 
 const ProductGrid = ({ products }) => (
 	<div className="product-buttons-grid">
